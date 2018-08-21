@@ -1,0 +1,24 @@
+# Tips for model_3
+## the test of model yolo_v3
+- Directory structure:
+    - darknet:
+     - backup: a directory to save trained model
+     - cfg: diffrent network model protext
+     - data: some example images 
+     - results: seems like the backup  directory, you can choose one of them to save the trained model
+     - scrips: a directory to prapare data and process 
+    - README.md
+- explain:
+    - darknet: the official directory of yolo v3, github: https://pjreddie.com/darknet/yolo/
+    - install: you should install the yolo v3 api (gpu or cpu) depend on your computer
+    - pre_train: you will have to download the pre-trained weight file,such as yolov3.weights(test) and darknet53.conv.74(train)
+- procedure:
+    - according to blogs, change `Markfile`, `./scripts/voc_label.py`, `./examples/detecor.c`
+    - install darknet 
+    - peapare datases, refrence to https://blog.csdn.net/cgt19910923/article/details/79725875
+    - `prepare_data.sh` to mkdir data direction and cp img and xml to crresponding files 
+    - `change_voc` to set  `cfg/voc.data` ,`data/voc.names`,`cfg/yolov3.cfg` according to your dataset 
+    - `run_train.sh`: choose the suitable commond according your computer version(gpu or cpu) 
+    - after trained well, you can test your test_image by `run_test_list.txt` or `run_test_single.sh`
+- refrence:
+    - blog: https://blog.csdn.net/uncle_ll/article/details/80830112
